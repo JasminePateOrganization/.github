@@ -2,7 +2,7 @@ version: 2
 registries:
   sparkpost-npm:
     type: npm-registry
-    url: https://www.npmjs.com/~sparkpost
+    url: https://registry.npmjs.org
     username: sparkpost
     password: ${{secrets.NPM_PASSWORD}}
 updates:
