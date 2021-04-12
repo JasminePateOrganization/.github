@@ -20,11 +20,23 @@ updates:
       - "auto-request"
 
   - package-ecosystem: terraform
-    directory: “/“
-    schedule:
-      interval: daily
+      directory: “/“
+      schedule:
+        interval: daily
+        time: "13:00"
+      allow:
+        - dependency-type: "all"
+      labels:
+        - "dependabot"
+        - "auto-request"
 
   - package-ecosystem: "pip"
-    directory: “/“
-    schedule:
-      interval: daily
+      directory: “/“
+      schedule:
+        interval: daily
+        time: "13:00"
+      allow:
+        - dependency-type: "all"
+      labels:
+        - "dependabot"
+        - "auto-request"
