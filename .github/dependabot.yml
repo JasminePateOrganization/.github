@@ -12,7 +12,7 @@ updates:
       - sparkpost-npm
     schedule:
       interval: daily
-      time: "19:20"
+      time: "19:26"
     allow:
       - dependency-type: "all"
     labels:
