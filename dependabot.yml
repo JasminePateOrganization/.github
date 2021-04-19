@@ -13,6 +13,7 @@ updates:
     schedule:
       interval: daily
       time: "23:20"
+    open-pull-requests-limit: 20
     allow:
       - dependency-type: "all"
     labels:
