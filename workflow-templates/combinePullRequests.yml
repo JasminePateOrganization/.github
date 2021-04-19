@@ -37,7 +37,7 @@ jobs:
         id: fetch-branch-names
         name: Fetch branch names
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
+          github-token: ${{secrets.DEPENDABOT_TOKEN}}
           script: |
             const pulls = await github.paginate('GET /repos/:owner/:repo/pulls', {
               owner: context.repo.owner,
@@ -98,7 +98,7 @@ jobs:
             combined = branches.join(' ')
             console.log('Combined: ' + combined);
             return combined
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # Checks-out your repository under $WORKSPACE, so your job can access it
       - uses: actions/checkout@v2.3.3
         with:
           fetch-depth: 0
@@ -128,7 +128,7 @@ jobs:
       - uses: actions/github-script@v3
         name: Create Combined Pull Request
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
+          github-token: ${{secrets.DEPENDABOT_TOKEN}}
           script: |
             const prString = `${{ steps.fetch-branch-names.outputs.prs-string }}`;
             const body = 'This PR was created by the Combine PRs action by combining the following PRs:\n' + prString;
