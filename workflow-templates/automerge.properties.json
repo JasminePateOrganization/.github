@@ -1,0 +1,13 @@
+{
+    "name": "Automerge Dependabot PRs",
+    "description": "Automerge PRs created by dependabot.",
+    "iconName": "example-icon",
+    "categories": [
+        "javascript"
+    ],
+    "filePatterns": [
+        "package.json$",
+        "^Dockerfile",
+        ".*\\.md$"
+    ]
+}

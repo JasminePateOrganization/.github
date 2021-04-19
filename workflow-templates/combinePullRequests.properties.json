@@ -1,0 +1,13 @@
+{
+    "name": "Combine Pull Requests",
+    "description": "Combine Pull Requests created by Dependabot",
+    "iconName": "example-icon",
+    "categories": [
+        "javascript"
+    ],
+    "filePatterns": [
+        "package.json$",
+        "^Dockerfile",
+        ".*\\.md$"
+    ]
+}
