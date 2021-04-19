@@ -1,27 +1,29 @@
-name: "Dependabot Automerge"
-on:
-  pull_request:
-   schedule:
-    # default branch at 10am UTC every Sunday
-    - cron: '40 13 * * *'
-jobs:
-  worker:
+--- 
+if: "github.actor == 'dependabot[bot]'"
+jobs: 
+  worker: 
     runs-on: ubuntu-latest
-if: github.actor == 'dependabot[bot]'
-    steps:
-      - name: automerge
-        uses: actions/github-script@0.2.0
-        with:
-          script: |
-            github.pullRequests.createReview({
-              owner: context.payload.repository.owner.login,
-              repo: context.payload.repository.name,
-              pull_number: context.payload.pull_request.number,
-              event: 'APPROVE'
-            })
-            github.pullRequests.merge({
-              owner: context.payload.repository.owner.login,
-              repo: context.payload.repository.name,
-              pull_number: context.payload.pull_request.number
-            })
-          github-token: ${{secrets.DEPENDABOT_TOKEN}}
+name: "Dependabot Automerge"
+steps: 
+  - 
+    name: automerge
+    uses: actions/github-script@0.2.0
+    with: 
+      github-token: "${{secrets.DEPENDABOT_TOKEN}}"
+      script: |
+          github.pullRequests.createReview({
+            owner: context.payload.repository.owner.login,
+            repo: context.payload.repository.name,
+            pull_number: context.payload.pull_request.number,
+            event: 'APPROVE'
+          })
+          github.pullRequests.merge({
+            owner: context.payload.repository.owner.login,
+            repo: context.payload.repository.name,
+            pull_number: context.payload.pull_request.number
+          })
+true: 
+  pull_request: 
+    schedule: 
+      - 
+        cron: "40 13 * * *"
