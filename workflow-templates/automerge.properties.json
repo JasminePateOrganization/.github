@@ -1,7 +1,7 @@
 {
     "name": "Automerge Dependabot PRs",
     "description": "Automerge PRs created by dependabot.",
-    "iconName": "example-icon",
+    "iconName": "automerge",
     "categories": [
         "javascript"
     ],
