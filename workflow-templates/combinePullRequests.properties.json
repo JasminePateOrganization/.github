@@ -1,7 +1,7 @@
 {
     "name": "Combine Pull Requests",
     "description": "Combine Pull Requests created by Dependabot",
-    "iconName": "example-icon",
+    "iconName": "automerge",
     "categories": [
         "javascript"
     ],
