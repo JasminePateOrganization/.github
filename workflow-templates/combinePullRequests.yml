@@ -86,6 +86,10 @@ jobs:
           BRANCHES_TO_COMBINE: ${{ steps.fetch-branch-names.outputs.result }}
           COMBINE_BRANCH_NAME: ${{ github.event.inputs.combineBranchName }}
         run: |
+        
+        
+        
+        
           sourcebranches="${BRANCHES_TO_COMBINE%\"}"
           sourcebranches="${sourcebranches#\"}"
           
